@@ -10,3 +10,10 @@
     grid-gap: 10px;
     overflow: hidden;
 }
+
+.wrapper_content {
+    grid-area: main;
+    background-color: lightslategray;
+    font-family: Roboto;
+    display: flex;
+}

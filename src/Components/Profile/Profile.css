@@ -1,9 +1,6 @@
 
 .main {
     grid-area: main;
-    background-color: lightslategray;
-    font-family: Roboto;
-    display: flex;
     align-items: center;
     padding-left: 50px;
     flex: 1 0 auto;

@@ -1,15 +1,16 @@
 import React from "react";
 import "./Navbar.css"
+import {NavLink} from "react-router-dom";
 
 
 const Navbar = () => {
     return (
         <aside className="sidebar">
             <div>
-                <div>Профиль</div>
+                <NavLink to="/profile">Профиль</NavLink>
             </div>
             <div>
-                <div>Сообщения</div>
+                <NavLink to="/dialogs">Сообщения</NavLink>
             </div>
             <div>
                 <div>Пользователи</div>
