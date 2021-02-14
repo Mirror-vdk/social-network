@@ -1,0 +1,31 @@
+.header {
+    grid-area: header;
+    background-color: dimgrey;
+    display: flex;
+    padding: 10px;
+    color: cyan;
+    justify-content: space-between;
+    font-family: Roboto;
+}
+.header_logo {
+    display: flex;
+    align-items: center;
+}
+.header_auth {
+    display: flex;
+    justify-self: end;
+    align-items: center ;
+    justify-content: center;
+}
+.item{
+    padding: 10px 10px 10px 10px;
+}
+.item_button{
+    padding: 10px 10px 10px 10px;
+    border-radius: 5px;
+    border: red;
+}
+.ava {
+    width: 40px;
+    height: 40px;
+}

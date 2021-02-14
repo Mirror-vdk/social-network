@@ -1,0 +1,11 @@
+
+.sidebar {
+    background-color: gray;
+    grid-area: sidebar;
+    display: flex;
+    flex-direction: column;
+    padding-left: 40px;
+    color: cyan;
+    font-family: Roboto;
+    padding-top: 20px;
+}

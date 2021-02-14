@@ -1,0 +1,8 @@
+
+.footer {
+    grid-area: footer;
+    background-color: dimgrey;
+    padding: 10px;
+    color: cyan;
+    flex: 0 0 auto;
+}
