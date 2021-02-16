@@ -1,0 +1,16 @@
+.main {
+    display: flex;
+    padding-left: 50px;
+    flex-direction: row;
+}
+
+.dialogs_list {
+    padding: 15px 15px 15px 15px;
+}
+
+.post_dialogs {
+    padding: 15px 15px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

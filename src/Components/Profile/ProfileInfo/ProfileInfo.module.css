@@ -1,11 +1,4 @@
 
-.main {
-    grid-area: main;
-    align-items: center;
-    padding-left: 50px;
-    flex: 1 0 auto;
-}
-
 .profile_ava {
     padding: 15px 15px 15px 15px;
 }

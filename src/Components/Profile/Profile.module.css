@@ -1,0 +1,13 @@
+.main {
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+}
+
+.profile_ava {
+    padding: 15px 15px 15px 15px;
+}
+.user_avatar {
+    width: 100px;
+    height: 100px;
+}

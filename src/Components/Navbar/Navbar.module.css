@@ -9,3 +9,14 @@
     font-family: Roboto;
     padding-top: 20px;
 }
+
+
+.item a {
+    color: floralwhite;
+    text-decoration: none;
+}
+
+.item a.activeLink {
+    color: darkgoldenrod;
+}
+

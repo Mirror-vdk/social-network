@@ -1,0 +1,26 @@
+
+.list_item {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    color: floralwhite;
+}
+.active a {
+    color: azure;
+    text-decoration: none;
+}
+.active a.activeLink {
+    color: wheat;
+    text-decoration: none;
+}
+.dialogs_ava {
+    height: 50px;
+    width: 50px;
+}
+.post_dialogs {
+    padding: 15px 15px 20px 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
