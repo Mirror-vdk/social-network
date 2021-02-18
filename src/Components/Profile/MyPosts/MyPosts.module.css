@@ -5,13 +5,10 @@
 .profile_info {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
     padding-left: 50px;
 }
 .Newpost_block {
     display: flex;
-    align-items: center;
     justify-content: space-between;
     flex-direction: row;
     padding-bottom: 10px;
@@ -23,4 +20,7 @@
 }
 .button_area{
     padding-left: 10px;
+}
+.post_area {
+    resize: none;
 }

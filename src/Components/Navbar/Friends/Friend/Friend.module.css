@@ -1,0 +1,12 @@
+.friends_block{
+    display: flex;
+    flex-direction: row;
+    color: black;
+}
+.friends_ava {
+    width: 30px;
+    border: 1px solid
+}
+.friends_data {
+    padding-left: 20px;
+}

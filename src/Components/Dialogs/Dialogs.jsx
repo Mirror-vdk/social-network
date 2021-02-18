@@ -5,21 +5,17 @@ import DialogItem from "./DialogItem/DialogItem";
 import NewMessage from "./NewMessage/NewMessage";
 
 
-const Dialogs = () => {
+const Dialogs = (props) => {
+    let dialogsElements = props.state.dialogs.map(d =>  <DialogItem name={d.name} id={d.id}/>)
+    let messagesElements = props.state.messages.map(m =>  <Message message={m.message} id={m.id}/>)
     return (
         <div className={s.main}>
             <div className={s.dialogs_list}>
-                <DialogItem name="Вася" id="1"/>
-                <DialogItem name="Петя" id="2"/>
-                <DialogItem name="Коля" id="3"/>
-                <DialogItem name="Лина" id="4"/>
+                {dialogsElements}
             </div>
             <div className={s.post_dialogs}>
                 <div>
-                    <Message message="Привет"/>
-                    <Message message="И вам добрый день!"/>
-                    <Message message=" Как ваши дела?"/>
-                    <Message message=" Отлично"/>
+                    {messagesElements}
                 </div>
                 <NewMessage/>
             </div>

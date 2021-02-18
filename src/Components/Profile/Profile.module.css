@@ -1,7 +1,7 @@
 .main {
     display: flex;
-    align-items: center;
     padding-left: 50px;
+    justify-content: flex-start;
 }
 
 .profile_ava {

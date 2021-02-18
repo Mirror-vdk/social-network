@@ -2,7 +2,7 @@ import React from "react";
 import s from "./Post.module.css"
 
 
-const Post = () => {
+const Post = (props) => {
     return (
         <section>
             <div className={s.posts_block}>
@@ -11,9 +11,9 @@ const Post = () => {
                         <img src="https://pngicon.ru/file/uploads/morkovka-128x128.png" className={s.post_ava}/>
                     </div>
                     <div>
-                        Привет
+                        {props.post}
                     </div>
-                    <div className={s.like_area}>like</div>
+                    <div className={s.like_area}>{props.likesCount}</div>
                 </div>
             </div>
         </section>

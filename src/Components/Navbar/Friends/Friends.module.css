@@ -1,0 +1,9 @@
+.friends_container {
+    display: flex;
+    flex-direction: column;
+    padding-left: 15px;
+    justify-content: end;
+    color: gold;
+    padding-top: 60px;
+    padding-bottom: 20px;
+}
