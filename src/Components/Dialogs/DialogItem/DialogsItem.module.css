@@ -17,6 +17,7 @@
 .dialogs_ava {
     height: 50px;
     width: 50px;
+    padding-right: 10px;
 }
 .post_dialogs {
     padding: 15px 15px 20px 100px;

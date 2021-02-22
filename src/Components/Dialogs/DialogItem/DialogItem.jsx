@@ -5,7 +5,7 @@ import {NavLink} from "react-router-dom";
 const DialogItem = (props) => {
 
     let path = "/dialogs/" + props.id
-    let ava = "https://pngicon.ru/file/uploads/1303507907_User_Green-128x128.png"
+    let ava = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT3WGxYB-NHKpUYXaZ_BGHh-JtCU6Rs32kR4Q&usqp=CAU"
 
     return (
         <div className={s.list_item}>

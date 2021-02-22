@@ -2,8 +2,7 @@ import s from "./Friend.module.css";
 import React from "react";
 
 const Friend = (props) => {
-    debugger
-    let friendsAva = "https://pngicon.ru/file/uploads/1303507907_User_Green-128x128.png"
+    let friendsAva = "https://upload.wikimedia.org/wikipedia/commons/f/f6/Choice_toxicity_icon.png"
     return (
         <div className={s.friends_block}>
             <div>
