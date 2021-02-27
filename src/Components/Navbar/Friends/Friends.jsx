@@ -4,6 +4,7 @@ import Friend from "./Friend/Friend";
 
 
 const Friends =(props) => {
+    debugger
     let friendsElements =
         props.friends.map(f => <Friend friend={f.friend} id={f.id} name={f.name} /> )
 
