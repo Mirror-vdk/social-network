@@ -6,10 +6,10 @@ import Profile from "./Components/Profile/Profile";
 import {BrowserRouter,Route} from "react-router-dom";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import NavbarContainer from "./Components/Navbar/NavbarContainer";
+import UsersContainer from "./Components/Users/UsersContainer";
 
 
 function App() {
-debugger
   return (
       <BrowserRouter>
           <div className="wrapper">
@@ -19,6 +19,7 @@ debugger
               <div className="wrapper_content">
                   <Route path='/profile' render={() => <Profile/>}/>
                   <Route path='/dialogs' render={() => <DialogsContainer/>}/>
+                  <Route path='/users' render={() => <UsersContainer/>}/>
               </div>
           </div>
       </BrowserRouter>

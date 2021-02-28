@@ -6,7 +6,6 @@ import FriendsContainer from "./Friends/FriendsContainer";
 
 
 const Navbar = (props) => {
-    debugger
     return (
         <aside className={s.sidebar}>
             <div className={s.item}>
