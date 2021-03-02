@@ -3,13 +3,7 @@ const UNFOLLOW = 'UNFOLLOW'
 const SET_USERS = 'SET-USERS'
 
 let initialState = {
-   users: [
-        {id: 1, followed: true,photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Choice_toxicity_icon.png' , fullName: 'Лина', status: 'Самурай', location: {city:'VDK', country: 'Russia'}},
-       {id: 2, followed: true , photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Choice_toxicity_icon.png' , fullName: 'Женя', status: 'оператор', location: {city:'VDK', country: 'Russia'}},
-       {id: 3, followed: false , photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Choice_toxicity_icon.png' , fullName: 'Виталя', status: 'монтажник', location: {city:'VDK', country: 'Russia'}},
-       {id: 4, followed: false , photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Choice_toxicity_icon.png' , fullName: 'Коля', status: 'монтажник', location: {city:'VDK', country: 'Russia'}},
-       {id: 5, followed: false , photoUrl: 'https://upload.wikimedia.org/wikipedia/commons/f/f6/Choice_toxicity_icon.png' , fullName: 'Серега', status: 'монтажник', location: {city:'VDK', country: 'Russia'}}
-    ]
+   users: []
 }
 
 const usersReducer = (state = initialState,action) => {
@@ -35,7 +29,7 @@ const usersReducer = (state = initialState,action) => {
                 })
             }
         case SET_USERS: {
-            return {...state, users: [...state.users, action.users]}
+            return {...state, users: [...state.users, ...action.users]}
         }
         default:
             return state
