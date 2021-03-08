@@ -7,13 +7,14 @@ import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import NavbarContainer from "./Components/Navbar/NavbarContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
+import HeaderContainer from "./Components/Header/HeaderContainer";
 
 
 function App() {
   return (
       <BrowserRouter>
           <div className="wrapper">
-              <Header/>
+              <HeaderContainer/>
               <NavbarContainer/>
               <Footer/>
               <div className="wrapper_content">
