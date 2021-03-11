@@ -3,12 +3,14 @@ import s from "./Users.module.css";
 import userPhoto from "../../assets/images/Choice_toxicity_icon.png";
 import {Button} from "@material-ui/core";
 import {NavLink} from "react-router-dom";
+import axios from "axios";
+import {usersAPI} from "../../API/api";
 
 
 let Users = (props) => {
     let pagesCount = props.totalUsersCount / props.pageSize
     let pages = [];
-    for (let i=1; i <= pagesCount; i++) {
+    for (let i = 1; i <= pagesCount; i++) {
         pages.push(i)
     }
     return <div>
@@ -49,12 +51,17 @@ let Users = (props) => {
                                         </div>
                                     </div>
                                     <div className={s.item}>
-                                        {u.followed ? <Button onClick={() => {
-                                                props.unfollow(u.id)
-                                            }} variant="outlined" color="secondary">Отписаться</Button>
-                                            : <Button onClick={() => {
-                                                props.follow(u.id)
-                                            }} color="primary" variant="outlined">Подписаться</Button>}
+                                        {u.followed ? <Button disabled={props.followingInProgress
+                                                .some(id => id === u.id)}
+                                                              onClick={() => {
+                                                                  props.unfollow(u.id)
+                                                              }} variant="outlined"
+                                                              color="secondary">Отписаться</Button>
+                                            : <Button disabled={props.followingInProgress.some(id => id === u.id)}
+                                                      onClick={() => {
+                                                          props.follow(u.id)
+                                                      }} color="primary" variant="outlined">
+                                                Подписаться</Button>}
                                     </div>
                                 </div>
                             </div>
