@@ -1,0 +1,31 @@
+.login_main {
+    display: flex;
+    flex-direction: column;
+}
+.login_block {
+    display: flex;
+    flex-direction: column;
+    color: gold;
+    width: 200px;
+    height: 250px;
+    align-items: center;
+    padding: 150px 200px 100px 400px
+}
+.login_auth {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+
+}
+.login_chekbox {
+    display: flex;
+    padding-right: 30px;
+}
+.input_area {
+    height: 30px;
+}
+.input {
+    width: 280px;
+    height: 20px;
+}
