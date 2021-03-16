@@ -1,0 +1,17 @@
+.formControl {
+    display: flex;
+}
+
+.formControl.error input,
+.formControl.error textarea {
+    border: solid red 2px;
+}
+
+.formControl.error img {
+    width: 40px;
+    height: 40px;
+    padding-left: 10px;
+}
+
+
+
