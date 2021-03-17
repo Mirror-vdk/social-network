@@ -1,12 +1,20 @@
 import React from "react";
 import s from "./Login.module.css"
 import {Field, reduxForm} from "redux-form";
-import {Button} from "@material-ui/core";
+import {Input} from "../../assets/FormsControls/FormsControls";
+import {required} from "../../ utils/validators/validators";
+import {connect} from "react-redux";
+import {login, logout} from "../../redux/auth-reducer";
+import {Redirect} from "react-router-dom";
+
 
 
 const Login = (props) => {
     const onSubmit = (formData) => {
-        console.log(formData)
+        props.login(formData.email, formData.password, formData.rememberMe)
+    }
+    if (props.isAuth) {
+        return <Redirect to={'/profile'}/>
     }
     return <div className={s.login_main}>
         <LoginReduxForm onSubmit={onSubmit} />
@@ -18,17 +26,19 @@ const LoginForm = (props) => {
             <div className={s.login_block}>
                 <h1>Авторизоваться</h1>
                 <div className={s.input_area}>
-                    <Field placeholder={"Введите логин"} name={"login"} component={"input"} className={s.input}/>
+                    <Field placeholder={"Введите логин"} validate={[required]}
+                           name={"email"} component={Input} className={s.input}/>
                 </div>
                 <div className={s.input_area}>
-                    <Field placeholder={"Введите пароль"} name={"password"} component={"input"} className={s.input}/>
+                    <Field placeholder={"Введите пароль"} validate={[required]}
+                           name={"password"} type={"password"} component={Input} className={s.input}/>
                 </div>
                 <div className={s.login_auth}>
                     <div className={s.login_chekbox}>
-                        <Field component={"input"} name={"rememberMe"} type={"checkbox"}/> Запомнить
+                        <Field component={"Input"} name={"rememberMe"} type={"checkbox"}/> Запомнить
                     </div>
                     <div>
-                        <Button variant="outlined" color="secondary">Войти</Button>
+                        <button>Войти</button>
                     </div>
                 </div>
             </div>
@@ -38,5 +48,10 @@ const LoginForm = (props) => {
 const LoginReduxForm = reduxForm ({
     form: 'login'
 }) (LoginForm)
+const mapStateToProps = (state) => ({
+    isAuth: state.auth.isAuth
+})
 
-export default Login
+
+
+export default connect (mapStateToProps,{login,logout}) (Login)

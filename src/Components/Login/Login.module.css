@@ -24,6 +24,7 @@
 }
 .input_area {
     height: 30px;
+    padding: 10px;
 }
 .input {
     width: 280px;
