@@ -11,8 +11,8 @@ const Header = (props) => {
             <div className={s.header_auth}>
                 {
                     props.isAuth
-                        ? <div className={s.item}>{props.login} <img src={ava} className={s.ava} /> <button onClick={props.logout}>Log out</button></div>
-                        : <button className={s.item_button}><NavLink to={'/login'}>Login</NavLink></button>
+                        ? <div className={s.item}>{props.login} <img src={ava} className={s.ava} /> <button onClick={props.logout}>Выйти</button></div>
+                        : <button className={s.item_button}><NavLink to={'/login'}>Войти</NavLink></button>
                 }
                    </div>
         </header>
