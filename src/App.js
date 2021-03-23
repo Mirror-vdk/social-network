@@ -1,4 +1,4 @@
-import React from "react";
+import React, {Component} from "react";
 import './App.css'
 import Footer from "./Components/Footer/Footer";
 import {BrowserRouter, Route, withRouter} from "react-router-dom";
@@ -11,10 +11,10 @@ import Login from "./Components/Login/Login";
 import {connect} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
-import Preloader from "./assets/Preloader/Preloader";
 
 
-class App extends React.Component {
+
+class App extends Component {
     componentDidMount() {
         this.props.initializeApp()
     }

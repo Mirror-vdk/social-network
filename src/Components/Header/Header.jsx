@@ -6,19 +6,16 @@ import ava from "../../assets/images/Choice_toxicity_icon.png"
 
 const Header = (props) => {
     return (
-        <div className={s.header}>
+        <header className={s.header}>
             <div className={s.header_logo}>logo</div>
             <div className={s.header_auth}>
                 {
                     props.isAuth
-                        ? <div className={s.item}>{props.login} <button onClick={props.logout}>Выйти</button><div className={s.ava}>
-                            <img src={ava}/>
-                        </div></div>
-                        : <div className={s.item_button}><button><NavLink to={'/login'}>Авторизоваться</NavLink></button></div>
+                        ? <div className={s.item}>{props.login} <img src={ava} className={s.ava} /> <button onClick={props.logout}>Log out</button></div>
+                        : <button className={s.item_button}><NavLink to={'/login'}>Login</NavLink></button>
                 }
-
                    </div>
-        </div>
+        </header>
         )
 }
 
