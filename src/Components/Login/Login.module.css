@@ -14,9 +14,8 @@
 .login_auth {
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
     padding-top: 10px;
+    padding-right: 10px;
 }
 .login_chekbox {
     display: flex;

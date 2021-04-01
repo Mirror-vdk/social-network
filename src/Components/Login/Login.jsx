@@ -1,7 +1,7 @@
 import React from "react";
 import s from "./Login.module.css"
 import {Field, reduxForm} from "redux-form";
-import {Input} from "../../assets/FormsControls/FormsControls";
+import {createField, Input} from "../../assets/FormsControls/FormsControls";
 import {required} from "../../ utils/validators/validators";
 import {connect} from "react-redux";
 import {login} from "../../redux/auth-reducer";
@@ -26,12 +26,10 @@ const LoginForm = (props) => {
             <div className={s.login_block}>
                 <h1>Авторизоваться</h1>
                 <div className={s.input_area}>
-                    <Field placeholder={"Введите логин"} validate={[required]}
-                           name={"email"} component={Input} className={s.input}/>
+                    {createField("Введите логин",[required],"email",Input,s.input)}
                 </div>
                 <div className={s.input_area}>
-                    <Field placeholder={"Введите пароль"} validate={[required]}
-                           name={"password"} type={"password"} component={Input} className={s.input}/>
+                    {createField("Введите пароль",[required],"password",Input,s.input,{type:"password"})}
                 </div>
                 { props.error &&
                     <div className={s.formSummaryError}>
@@ -39,9 +37,7 @@ const LoginForm = (props) => {
                 </div>
                 }
                 <div className={s.login_auth}>
-                    <div className={s.login_chekbox}>
-                        <Field component={"Input"} name={"rememberMe"} type={"checkbox"}/> Запомнить
-                    </div>
+                        {createField(null,null,"rememberMe","Input",s.login_chekbox,{type:"checkbox"},"Запомнить")}
                     <div>
                         <button>Войти</button>
                     </div>

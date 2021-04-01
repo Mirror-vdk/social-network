@@ -1,7 +1,7 @@
 import React, {Component} from "react";
 import './App.css'
 import Footer from "./Components/Footer/Footer";
-import {BrowserRouter, Route, withRouter} from "react-router-dom";
+import {Route, withRouter} from "react-router-dom";
 import DialogsContainer from "./Components/Dialogs/DialogsContainer";
 import NavbarContainer from "./Components/Navbar/NavbarContainer";
 import UsersContainer from "./Components/Users/UsersContainer";
@@ -24,7 +24,6 @@ class App extends Component {
             return <div>Загрузка</div>
         }
         return (
-            <BrowserRouter>
                 <div className="wrapper">
                     <HeaderContainer/>
                     <NavbarContainer/>
@@ -36,7 +35,6 @@ class App extends Component {
                         <Route path='/login' render={() => <Login/>}/>
                     </div>
                 </div>
-            </BrowserRouter>
         );
     }
 }

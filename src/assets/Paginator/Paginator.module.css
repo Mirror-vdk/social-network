@@ -1,0 +1,7 @@
+.pages_block {
+    display: flex;
+    padding: 15px 10px 10px 100px;
+}
+.selectedPage {
+    font-weight: bold ;
+}
