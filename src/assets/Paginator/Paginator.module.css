@@ -4,4 +4,9 @@
 }
 .selectedPage {
     font-weight: bold ;
+    border: black solid 1px;
+}
+.button {
+    padding-left: 15px;
+    padding-right: 15px;
 }
