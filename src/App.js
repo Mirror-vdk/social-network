@@ -1,4 +1,4 @@
-import React, {Component,Suspense} from "react";
+import React, {Component} from "react";
 import './App.css'
 import Footer from "./Components/Footer/Footer";
 import {Route, withRouter} from "react-router-dom";
