@@ -18,9 +18,6 @@ let User = ({user,followingInProgress,unfollow,follow}) => {
                                                      className={s.user_avatar}/>
                                             </NavLink>
                                         </div>
-                                        <div className={s.ava_item}>
-                                            {user.status}
-                                        </div>
                                     </div>
                                     <div className={s.user_body}>
                                         <div className={s.item}>
@@ -31,6 +28,9 @@ let User = ({user,followingInProgress,unfollow,follow}) => {
                                         </div>
                                         <div className={s.item}>
                                             Населеный пункт: Владик
+                                        </div>
+                                        <div className={s.ava_item}>
+                                           Статус {user.status}
                                         </div>
                                     </div>
                                     <div className={s.item}>

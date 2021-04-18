@@ -1,6 +1,7 @@
 .main {
     display: flex;
     flex-direction: row;
+    padding-left: 15px;
 }
 .profile_info {
     display: flex;

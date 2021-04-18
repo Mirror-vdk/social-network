@@ -3,7 +3,18 @@
     padding: 15px 15px 15px 15px;
     justify-content: flex-start;
     width: 150px;
+    font-family: Roboto;
 }
+
+.profile_ava h1 {
+    font-family: Roboto;
+    font-size: 20px;
+}
+
+.profile_ava div img {
+    width: 50px;
+}
+
 .user_avatar {
     width: 100px;
     height: 100px;
@@ -13,6 +24,98 @@
     border: none;
     resize: none;
 }
+
 .loadava {
     width: 150px;
+}
+
+.profile_info {
+    display: flex;
+    flex-direction: column;
+    color: cyan;
+    font-size: 14px;
+    flex-wrap: wrap;
+}
+
+.profile_info div {
+    display: flex;
+    align-items: center;
+}
+
+.profile_info input {
+    width: 150px;
+    height: 30px;
+    align-items: center;
+    justify-content: center;
+    padding-left: 10px;
+}
+
+.editButton {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 15px;
+    align-items: center;
+}
+
+.profile_info_status {
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.profile_info_status h1 {
+    display: flex;
+}
+
+.looking_job {
+    display: flex;
+    font-size: 16px;
+    padding-top: 10px;
+    max-width: 50px;
+    padding-right: 70px;
+    padding-bottom: 10px;
+    align-items: center;
+}
+
+.looking_job b {
+    display: flex;
+    padding-top: 10px;
+}
+
+.checkbox_area {
+    padding-left: 30px;
+    align-items: center;
+    padding-top: 10px;
+}
+
+.checkbox {
+    max-width: 40px;
+    padding-right: 10px;
+    align-items: center;
+}
+.looking_job_description {
+    font-size: 16px;
+    padding-top: 10px;
+}
+.textarea {
+    border: lavender solid 2px;
+    resize: none;
+}
+.aboutMe {
+    padding-top: 10px;
+    display: flex;
+}
+.contact {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+.info_block {
+    display: flex;
+    flex-direction: column;
+}
+.contacts {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
