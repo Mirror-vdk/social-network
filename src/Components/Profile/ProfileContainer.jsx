@@ -6,7 +6,6 @@ import {
     getUserProfile,
     savePhoto,
     updateStatus,
-    deletePost,
     getAboutMe,
     saveProfile
 } from "../../redux/profile-reducer";
@@ -60,6 +59,6 @@ let mapStateToProps = (state) => ({
 })
 
 export default compose(
-    connect (mapStateToProps, {getUserProfile,getStatus,updateStatus,savePhoto,deletePost,getAboutMe,saveProfile}),
+    connect (mapStateToProps, {getUserProfile,getStatus,updateStatus,savePhoto,getAboutMe,saveProfile}),
     withRouter
 )(ProfileContainer)

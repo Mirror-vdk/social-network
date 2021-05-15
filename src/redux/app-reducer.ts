@@ -1,18 +1,19 @@
 import {authMe} from "./auth-reducer";
+import {InferActionTypes} from "./redux-store";
 
-const INITIALIZED_SUCCESS = 'INITIALIZED_SUCCESS'
 
-export type InitialStateType = {
-    initialized: boolean
-}
+export type InitialStateType = typeof initialState
+export type ActionsType = InferActionTypes<typeof actions>
+    
 
-let initialState: InitialStateType = {
+
+let initialState = {
    initialized: false
 }
 
-const appReducer = (state = initialState, action: any): InitialStateType => {
+const appReducer = (state = initialState, action: ActionsType): InitialStateType => {
     switch (action.type) {
-        case INITIALIZED_SUCCESS:
+        case 'app/INITIALIZED_SUCCESS':
             return  {
                 ...state,
                 initialized: true
@@ -22,18 +23,15 @@ const appReducer = (state = initialState, action: any): InitialStateType => {
     }
 }
 
-
-type initializedSuccessAcitionType = {
-    type: typeof INITIALIZED_SUCCESS
+export const actions = {
+    initializedSuccess: () => ({type: 'app/INITIALIZED_SUCCESS'} as const)
 }
-
-export const initializedSuccess = () : initializedSuccessAcitionType => ({type: INITIALIZED_SUCCESS})
 
 export const initializeApp = () => (dispatch: any) => {
    let promise = dispatch(authMe())
     Promise.all([promise])
         .then(() => {
-        dispatch(initializedSuccess())
+        dispatch(actions.initializedSuccess())
     })
 }
 
