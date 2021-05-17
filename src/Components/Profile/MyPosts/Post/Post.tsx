@@ -1,8 +1,13 @@
-import React from "react";
+import React, {FC} from "react";
 import s from "./Post.module.css"
 
+type PropsType = {
+    post: string
+    likesCount: number
+    id: number
+}
 
-const Post = (props) => {
+const Post: FC<PropsType> = (props) => {
     return (
         <section>
             <div className={s.posts_block}>

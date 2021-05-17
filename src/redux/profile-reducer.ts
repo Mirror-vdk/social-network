@@ -15,8 +15,7 @@ let initialState = {
     ] as Array<PostsType>,
     profile: null as ProfileType | null,
     status: "",
-    aboutMe: "",
-    newPostText: ''
+    aboutMe: ""
 }
 
 
@@ -28,7 +27,7 @@ const profileReducer = (state = initialState, action: ActionsType) : initialStat
                 post: action.newPostText,
                 likesCount: 0
             }
-            return {...state, posts: [...state.posts, newPost], newPostText: ' '}
+            return {...state, posts: [...state.posts, newPost]}
         }
         case 'profile/DELETE_POST': {
             return {...state, posts: state.posts.filter(p => p.id != action.postId)}

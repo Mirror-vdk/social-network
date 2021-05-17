@@ -10,8 +10,7 @@ let state = {
     ],
     profile: null as ProfileType | null,
     status: "",
-    aboutMe: "",
-    newPostText: ''
+    aboutMe: ""
 }
 
 test('length of posts should be incremented', () => {

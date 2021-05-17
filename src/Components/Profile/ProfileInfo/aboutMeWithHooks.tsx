@@ -1,6 +1,12 @@
-import React, {useEffect, useState} from "react";
+import React, {ChangeEvent, FC, useEffect, useState} from "react";
 debugger
-const AboutMeWithHooks = (props) => {
+
+type PropsType = {
+    aboutMe: string
+
+}
+
+const AboutMeWithHooks: FC<PropsType> = (props) => {
 
     let [editAbout, setEditAbout] = useState(false)
     let [aboutMe, setAboutMe] = useState(props.aboutMe)
@@ -13,7 +19,7 @@ const AboutMeWithHooks = (props) => {
     const deactivateEditMode = () => {
         setEditAbout(false)
     }
-    const onAboutChange = (e) => {
+    const onAboutChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         setAboutMe(e.currentTarget.value)
     }
     debugger

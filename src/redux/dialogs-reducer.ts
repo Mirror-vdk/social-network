@@ -31,7 +31,7 @@ export type initialStateType = typeof initialState
 type ActionType = InferActionTypes<typeof actions>
 
 export const actions = {
-    sendMessageCreator : (newMessageText : string) => ({type: 'dialogs/SEND-MESSAGE', newMessageText} as const)
+    sendMessage : (newMessageText : string) => ({type: 'dialogs/SEND-MESSAGE', newMessageText} as const)
 }
 
 const dialogsReducer = (state = initialState, action: ActionType) : initialStateType => {

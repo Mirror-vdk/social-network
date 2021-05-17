@@ -1,10 +1,19 @@
-import React from "react";
+import React, {FC} from "react";
 import "./Header.module.css"
 import s from "./Header.module.css"
 import {NavLink} from "react-router-dom";
 import ava from "../../assets/images/Choice_toxicity_icon.png"
 
-const Header = (props) => {
+export type MapPropsType = {
+    isAuth: boolean
+    login: string | null
+}
+export type DispatchPropsType = {
+    logout: () => void
+}
+
+
+const Header : FC <MapPropsType & DispatchPropsType> = (props) => {
     return (
         <header className={s.header}>
             <div className={s.header_logo}>logo</div>

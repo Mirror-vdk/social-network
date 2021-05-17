@@ -1,11 +1,19 @@
-import React from "react";
+import React, {FC} from "react";
 import s from "./User.module.css";
 import {Button} from "@material-ui/core";
 import {NavLink} from "react-router-dom";
 import userPhoto from "../../../assets/images/Choice_toxicity_icon.png";
+import {UsersType} from "../../../types/types";
 
 
-let User = ({user,followingInProgress,unfollow,follow}) => {
+type PropsType = {
+    user : UsersType,
+    followingInProgress: Array<number>,
+    unfollow: (userId:number) => void
+    follow: (userId:number) => void
+}
+
+let User : FC<PropsType> = ({user,followingInProgress,unfollow,follow}) => {
     return (
                     <div className={s.userspage_main} key={user.id}>
                         <div className={s.users_block}>

@@ -1,5 +1,5 @@
 
-import dialogsReducer, {sendMessageCreator} from "./dialogs-reducer";
+import dialogsReducer, {actions} from "./dialogs-reducer";
 
 let state = {
     messages: [
@@ -18,7 +18,7 @@ let state = {
     ]
 }
 test('length of messages should be incremented', () => {
-    let action = sendMessageCreator("Тест")
+    let action = actions.sendMessage("Тест")
     let newState = dialogsReducer(state,action)
     expect(newState.messages.length).toBe(6)
 });

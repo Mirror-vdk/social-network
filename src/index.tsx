@@ -1,13 +1,8 @@
 import React from 'react';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import store from "./redux/redux-store";
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import {BrowserRouter} from "react-router-dom";
-import {Provider} from "react-redux";
-import SocialNetworkApp from "./App";
+import SocialNetworkApp from './App';
 
 ReactDOM.render(
     <SocialNetworkApp/>, document.getElementById('root'))

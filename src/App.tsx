@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component, ComponentType, FC} from "react";
 import './App.css'
 import Footer from "./Components/Footer/Footer";
 import {BrowserRouter, Switch, Route, withRouter} from "react-router-dom";
@@ -9,19 +9,26 @@ import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import {withSuspense} from "./hoc/withSuspense";
-import store from "./redux/redux-store";
+import store, {AppStateType} from "./redux/redux-store";
 import UsersContainer from "./Components/Users/UsersContainer";
 
 
 const ProfileContainer = React.lazy(() => import('./Components/Profile/ProfileContainer'));
 const DialogsContainer = React.lazy(() => import('./Components/Dialogs/DialogsContainer'));
+const SyspendedDialogs = withSuspense(DialogsContainer)
+const SyspendedProfile = withSuspense(ProfileContainer)
 
 
+type MapPropsType = ReturnType<typeof mapStateToProps>
+type DispatchPropsType = {
+    initializeApp: () => void
+}
 
-class App extends Component {
+class App extends Component <MapPropsType & DispatchPropsType> {
     componentDidMount() {
         this.props.initializeApp()
     }
+
 
     render() {
         if(!this.props.initialized){
@@ -35,8 +42,8 @@ class App extends Component {
 
                     <div className="wrapper_content">
                         <Switch>
-                            <Route path='/profile/:userId?' render={withSuspense(ProfileContainer)}/>
-                            <Route path='/dialogs' render={withSuspense(DialogsContainer)}/>
+                            <Route path='/profile/:userId?' render={() => <SyspendedProfile/>}/>
+                            <Route path='/dialogs' render={ ()=> <SyspendedDialogs/>}/>
                             <Route path='/users' render={() => <UsersContainer pageTitle={"Самураи"}/>}/>
                             <Route path='/login' render={() => <Login/>}/>
                         </Switch>
@@ -46,15 +53,15 @@ class App extends Component {
     }
 }
 
-const mapStateToProps = (state) => ({
+const mapStateToProps = (state:AppStateType) => ({
     initialized: state.app.initialized
 })
 
-const AppContainer = compose(
+const AppContainer = compose<ComponentType>(
     withRouter,
     connect(mapStateToProps, {initializeApp}))(App)
 
-const SocialNetworkApp = (props) => {
+const SocialNetworkApp: FC = () => {
     return <BrowserRouter>
         <Provider store={store}>
             <AppContainer/>
