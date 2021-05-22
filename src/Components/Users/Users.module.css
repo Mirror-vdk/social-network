@@ -1,7 +1,12 @@
-.users_main   {
+.users_main {
     display: flex;
-    padding-left: 50px;
+    justify-content: center;
     flex-wrap: wrap;
     max-width: 1200px;
-
+}
+.pages_main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: left;
 }

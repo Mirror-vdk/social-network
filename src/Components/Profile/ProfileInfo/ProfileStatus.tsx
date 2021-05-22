@@ -22,7 +22,7 @@ class ProfileStatus extends React.Component <PropsType, StateType>  {
 
     deactivateEditMode =() => {
         this.setState({editMode: false})
-        this.props.updateStatus(this.state.status)
+        this.props.updateStatus(this.state!.status)
     }
     onStatusChange = (e: ChangeEvent<HTMLTextAreaElement>) => {
         this.setState({status:  e.currentTarget.value })
@@ -44,7 +44,7 @@ class ProfileStatus extends React.Component <PropsType, StateType>  {
                 </div>}
                 {this.state.editMode &&
                 <textarea onChange={this.onStatusChange}  placeholder="Введите сообщение" autoFocus={true} onBlur={this.deactivateEditMode}
-                          value={this.state.status} className={s.status_area}/>}
+                          value={this.state!.status} className={s.status_area}/>}
             </div>)
     }
 }
