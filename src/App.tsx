@@ -1,16 +1,17 @@
 import React, {Component, ComponentType, FC} from "react";
 import './App.css'
 import Footer from "./Components/Footer/Footer";
-import {BrowserRouter, Switch, Route, withRouter} from "react-router-dom";
+import {BrowserRouter, Route, Switch, withRouter} from "react-router-dom";
 import NavbarContainer from "./Components/Navbar/NavbarContainer";
 import HeaderContainer from "./Components/Header/HeaderContainer";
-import Login from "./Components/Login/Login";
 import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import {initializeApp} from "./redux/app-reducer";
 import {withSuspense} from "./hoc/withSuspense";
 import store, {AppStateType} from "./redux/redux-store";
-import UsersContainer from "./Components/Users/UsersContainer";
+import {UsersPage} from "./Components/Users/UsersContainer";
+import {Login} from "./Components/Login/Login";
+
 
 
 const ProfileContainer = React.lazy(() => import('./Components/Profile/ProfileContainer'));
@@ -44,7 +45,7 @@ class App extends Component <MapPropsType & DispatchPropsType> {
                         <Switch>
                             <Route path='/profile/:userId?' render={() => <SyspendedProfile/>}/>
                             <Route path='/dialogs' render={ ()=> <SyspendedDialogs/>}/>
-                            <Route path='/users' render={() => <UsersContainer pageTitle={"Самураи"}/>}/>
+                            <Route path='/users' render={() => <UsersPage/>}/>
                             <Route path='/login' render={() => <Login/>}/>
                         </Switch>
                     </div>
